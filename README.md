@@ -1,7 +1,17 @@
+# SimpleTest
+
+Teste simples *pra entender melhor o* **K8S**!
+
+- Kubernetes ( Minikube, Metrics, Ingress ); 
+- Traefik ( Monitor ); 
+- 2 sites ( SimpleWhale e RacingCarAnimation ).
+
+
 ### 🛠 Pré-requesitos
 
-docker
-minikube
+- [x] Minikube
+- [x] kubectl
+- [x] Docker
 
 ### 🛠 Lista Comandos
 
@@ -74,7 +84,7 @@ kubectl apply -f Traefik/traefik-service.yaml
 echo "$(minikube ip) traefik.minikube.local whale.minikube.local car.minikube.local" | sudo tee -a /etc/hosts
 ```
 
-OBS.: Caso voce esteja utilizando o Windows, acredito que esse processo de setar o hosts, terá que ser um pouco manual. Como, acessar pelo Windows Explorer o diretório "C:/Windows/System32/drivers/etc/" copie o arquivo "hosts" para a "Área de trabalho", abra o arquivo e adicione no final deste arquivo "IP_MINIKUBE traefik.minikube.local whale.minikube.local car.minikube.local". Salve, e depois copie esse arquivo para o diretório padrão "C:/Windows/System32/drivers/etc/".
+**OBS.:** *Caso voce esteja utilizando o Windows, acredito que esse processo de setar o hosts, terá que ser um pouco manual. Como, acessar pelo Windows Explorer o diretório "C:/Windows/System32/drivers/etc/" copie o arquivo "hosts" para a "Área de trabalho", abra o arquivo e adicione no final deste arquivo "IP_MINIKUBE traefik.minikube.local whale.minikube.local car.minikube.local". Salve, e depois copie esse arquivo para o diretório padrão "C:/Windows/System32/drivers/etc/".*
 
 Pronto, agora é só acessar pelo seu browser as 3 URLs.
 
