@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplewhale
+  namespace: hml
+  labels:
+    app: simplewhale
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: simplewhale
+  template:
+    metadata:
+      labels:
+        app: simplewhale
+    spec:
+      containers:
+        - name: simplewhale
+          image: roanfranklin/simplewhale:1.0.4
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi

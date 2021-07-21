@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: simplewhale
+  namespace: hml
+spec:
+  selector:
+    app: simplewhale
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    #nodePort: 30080
+  #type: NodePort

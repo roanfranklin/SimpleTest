@@ -1,0 +1,39 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-web-ui
+  namespace: hml
+spec:
+  rules:
+  - host: traefik.minikube.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: traefik-ingress-service
+          servicePort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: traefik-web-access
+  namespace: hml
+  #annotations:
+  #  kubernetes.io/ingress.class: traefik
+  #  traefik.frontend.rule.type: PathPrefixStrip
+spec:
+  rules:
+  - host: whale.minikube.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: simplewhale
+          servicePort: 80
+  - host: car.minikube.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: racingcaranimation
+          servicePort: 80

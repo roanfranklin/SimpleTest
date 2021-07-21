@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: racingcaranimation
+  namespace: hml
+  labels:
+    app: racingcaranimation
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: racingcaranimation
+  template:
+    metadata:
+      labels:
+        app: racingcaranimation
+    spec:
+      containers:
+        - name: racingcaranimation
+          image: roanfranklin/racingcaranimation:1.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
